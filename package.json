@@ -1,5 +1,5 @@
 {
-  "name": "node-twitch",
+  "name": "@snwzy/twitch",
   "version": "0.5.0",
   "description": "A wrapper for the Helix Twitch API in NodeJS.",
   "main": "dist/index.js",
