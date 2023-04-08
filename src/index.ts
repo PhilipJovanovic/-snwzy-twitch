@@ -244,9 +244,11 @@ export class TwitchApi extends EventEmitter{
 		const response = await fetch(url, options);
 
 		if(response.status === 401){
+			console.log("#> response: 401");
 			await this._refresh();
 			return this._get(endpoint);
 		}else if(response.status === 429) {
+			console.log("#> response: 429");
 			const ratelimit = {
 				limit: Number(response.headers.get("Ratelimit-Limit")),
 				remaining: Number(response.headers.get("Ratelimit-Remaining")),
@@ -788,9 +790,13 @@ export class TwitchApi extends EventEmitter{
 
 	/** fetch the api directyl via get request */
 	async get(endpoint: string, options?: GetStreamsOptions): Promise<any>{
-		const query = options ? "?" + parseOptions(options) : '';
+		const query = options ? "?" + parseOptions(options) : "";
 
-		return this._get<any>(endpoint + query);
+		const full = endpoint + query;
+
+		console.log(full);
+
+		return this._get<any>(full);
 	}
 }
 
