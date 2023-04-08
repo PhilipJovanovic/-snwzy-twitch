@@ -785,6 +785,13 @@ export class TwitchApi extends EventEmitter{
 
 		return this._post(endpoint);
 	}
+
+	/** fetch the api directyl via get request */
+	async get(endpoint: string, options?: GetStreamsOptions): Promise<any>{
+		const query = options ? "?" + parseOptions(options) : '';
+
+		return this._get<any>(endpoint + query);
+	}
 }
 
 export default TwitchApi;
