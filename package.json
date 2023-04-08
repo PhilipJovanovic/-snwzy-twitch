@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PhilipJovanovic/node-twitch.git"
+    "url": "git+https://github.com/PhilipJovanovic/-snwzy-twitch.git"
   },
   "keywords": [
     "twitch",
